@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link"
-import { useSession } from "next-auth/react"
+import { useSession, signOut } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import { Edit, MessageSquare, Plus, Share2, Trash2, BarChart2 } from "lucide-react"
@@ -138,7 +138,7 @@ export default function DashboardPage() {
             <Button size="sm" variant="ghost" asChild>
               <Link href="/settings">Settings</Link>
             </Button>
-            <Button size="sm" variant="outline" onClick={() => router.push("/api/auth/signout")}>
+            <Button size="sm" variant="outline" onClick={() => signOut({ callbackUrl: "/" })}>
               Log out
             </Button>
           </div>

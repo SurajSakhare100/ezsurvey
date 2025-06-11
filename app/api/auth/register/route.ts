@@ -2,7 +2,21 @@ import { NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import connectDB from '@/lib/db';
 import User from '@/models/User';
-import { successResponse, errorResponse } from '@/lib/api-utils';
+
+// Helper functions for API responses
+function errorResponse(message: string, status = 400) {
+  return NextResponse.json(
+    { success: false, message },
+    { status }
+  );
+}
+
+function successResponse(data: any, message: string, status = 200) {
+  return NextResponse.json(
+    { success: true, message, data },
+    { status }
+  );
+}
 
 // Password strength validation
 function isPasswordStrong(password: string): { isValid: boolean; message?: string } {
