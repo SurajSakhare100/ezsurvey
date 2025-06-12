@@ -135,9 +135,6 @@ export default function DashboardPage() {
             <Button size="sm" variant="ghost" asChild>
               <Link href="/templates">Templates</Link>
             </Button>
-            <Button size="sm" variant="ghost" asChild>
-              <Link href="/settings">Settings</Link>
-            </Button>
             <Button size="sm" variant="outline" onClick={() => signOut({ callbackUrl: "/" })}>
               Log out
             </Button>

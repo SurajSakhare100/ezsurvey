@@ -153,7 +153,7 @@ export default function NewSurveyPage() {
         description: "Survey created successfully!",
       })
 
-      router.push(`/survey/${data.survey.id}`)
+      router.push(`/survey/edit/${data.survey.id}`)
 
     } catch (error) {
       toast({
